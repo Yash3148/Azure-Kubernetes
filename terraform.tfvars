@@ -23,7 +23,7 @@ sku_tier                       = "Paid"
 /******************************************
   Node pools
 ******************************************/
-enable_auto_scaling             =    true
+enable_auto_scaling             =    false
 enable_host_encryption          =    false
 enable_node_public_ip           =    false
 max_count                       =    5

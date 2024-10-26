@@ -7,15 +7,15 @@ resource "azurerm_kubernetes_cluster" "aks" {
     sku_tier                                = var.sku_tier
     default_node_pool {
         enable_auto_scaling                 = var.enable_auto_scaling
-        enable_host_encryption              = var.enable_host_encryption
-        enable_node_public_ip               = var.enable_node_public_ip
+        # enable_host_encryption              = var.enable_host_encryption
+        # enable_node_public_ip               = var.enable_node_public_ip
         max_count                           = var.max_count
         max_pods                            = var.max_pods
         min_count                           = var.min_count
         name                                = var.node_pool_name
         node_labels                         = var.node_labels
         kubelet_disk_type                   = var.kubelet_disk_type
-        node_taints                         = var.node_taints
+        # node_taints                         = var.node_taints
         orchestrator_version                = var.kubernetes_node_version
         os_disk_size_gb                     = var.os_disk_size_gb
         os_disk_type                        = var.os_disk_type
@@ -34,11 +34,11 @@ resource "azurerm_kubernetes_cluster" "aks" {
     identity {
         type                                = var.identity_type
      }
-    azure_active_directory_role_based_access_control {
-      managed                = true
-      tenant_id              = "8587af23-dde8-4a87-a385-0d4080fa6df9"
-      azure_rbac_enabled     = true
-    }
+    # azure_active_directory_role_based_access_control {
+    #   managed                = true
+    #   tenant_id              = "8587af23-dde8-4a87-a385-0d4080fa6df9"
+    #   azure_rbac_enabled     = true
+    # }
 
 #Networking
 
@@ -52,7 +52,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
 #Integration
     private_dns_zone_id                     = var.private_dns_zone_id
     dns_prefix                              = var.dns_prefix
-    public_network_access_enabled           = var.public_network_access_enabled
+    # public_network_access_enabled           = var.public_network_access_enabled
     private_cluster_enabled                 = var.private_cluster_enabled
     private_cluster_public_fqdn_enabled     = var.private_cluster_public_fqdn_enabled
     azure_policy_enabled                    = var.azure_policy_enabled  
